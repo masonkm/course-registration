@@ -24,6 +24,23 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/comment/:id", async (req, res) => {
+  try {
+    let courseList = await courseData.getAllCourses();
+    let commentList = [];
+    for(let course of courseList){
+      for(let comment of course.comments){
+        if(comment.poster.id == req.params.id){
+          commentList.push(comment);
+        }
+      }
+    }
+    res.status(200).json(commentList);
+  } catch (e) {
+    res.status(404).json({ error: "Course not found" });
+  }
+});
+
 router.post("/", async (req, res) => {
   /* new students added by post request in the JSON form
     {
