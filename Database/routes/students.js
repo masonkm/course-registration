@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
     const studentList = await studentData.getAll();
     res.json(studentList);
   } catch (e) {
-    res.status(400).json({ error: "get /student" });
+    res.status(400).json({ error: "get /students" });
   }
 });
 
@@ -44,7 +44,7 @@ router.post("/", async (req, res) => {
       sData.profile.studentId, sData.profile.year, sData.profile.credits);
     res.status(200).json(newStudent);
   } catch (e) {
-    res.status(400).json({ error: "post /student" });
+    res.status(400).json({ error: "post /students" });
   }
 });
 
@@ -126,7 +126,7 @@ router.put("/:id", async (req, res) => {
     }
     res.status(200).json(await studentData.update(req.params.id, user, pwd, year, cred, fin, curr, holds));
   } catch (e) {
-    res.status(400).json({ error: "put student" });
+    res.status(400).json({ error: "put /students" });
   }
 });
 
@@ -145,7 +145,7 @@ router.delete("/:id", async (req, res) => {
     };
     res.json(deletedStudent);
   } catch (e) {
-    res.status(400).json({ error: "delete student" });
+    res.status(400).json({ error: "delete /students" });
   }
 });
 
