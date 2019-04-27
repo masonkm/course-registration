@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+      function submitform(){
+        axios.post('/students',
+          {
+          	"userName": document.getElementById("userName").value,
+          	"hashedPass": document.getElementById("hashedPass").value,
+          	"profile": {
+          	    "lastName": document.getElementById("lastName").value,
+          	    "firstName": document.getElementById("firstName").value,
+          	    "studentId": 12345678,
+          	    "year": 2,
+          	    "credits": 0
+          	}
+          }
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="lastName">Last Name: </label><input type="text" id="lastName" name="personName"><br>
+      <label for="firstName">First Name: </label><input type="text" id="firstName" name="personName"><br>
+      <label for="userName">Username: </label><input type="text" id="userName" name="personName"><br>
+      <label for="hashedPass">Password: </label><input type="text" id="hashedPass" name="personName"><br>
+      <button type="Submit" value="Submit" onclick="submitform()">Submit</button>
+    </div>
+    <form method="get" action="/students">
+      <button type="submit">get info</button>
+    </form>
+  </body>
+</html>
