@@ -3,7 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const configRoutes = require("./routes");
+const configRoutes = require("./database/routes");
 const path = require('path');
 
 app.use(bodyParser.json());

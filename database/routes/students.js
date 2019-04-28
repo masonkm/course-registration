@@ -57,7 +57,6 @@ router.post("/", async (req, res) => {
   */
   try {
     const sData = req.body;
-    console.log(sData);
     const newStudent = await studentData.create(sData.userName, sData.hashedPass, sData.profile.lastName, sData.profile.firstName,
       sData.profile.studentId, sData.profile.year, sData.profile.credits);
     res.status(200).json(newStudent);
