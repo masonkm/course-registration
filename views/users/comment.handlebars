@@ -1,0 +1,24 @@
+<nav>
+        <ul>
+            <li><a href="/courses/registration/">Make another search</a></li>
+        </ul>
+        <ul>
+            <li><a href = "/courses/registration/search/{{id}}"> Back to course</a></li>
+        </ul>
+</nav>
+<section>
+    <h2>Comments about {{courseName}}</h2>
+    <ul>
+        {{#each comments}}
+            <li>
+                <dl>
+                    <dt>Poster</dt>
+                    <dd>{{this.poster.name}}</dd>
+                    <dt>Content</dt>
+                    <dd>{{this.comment}}</dd>
+                </dl>
+            </li>
+        {{/each}}
+    </ul>
+
+</section>

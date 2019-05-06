@@ -1,0 +1,14 @@
+<section>
+    <h1>Rating your courses</h1>
+    <p>Rating and commenting a following course</p>
+    <ul>
+        {{#each finishedCourses}}
+            <article>
+                <li>
+                    <a href = "/courses/rating/newComment/{{this._id}}">
+                    {{this.courseTitle}}  {{this.courseName}}</a>
+                </li>
+            </article>
+        {{/each}}
+    </ul>
+</section>

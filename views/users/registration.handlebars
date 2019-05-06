@@ -1,0 +1,27 @@
+<div class = "new-search">
+    <h1> Search Courses </h1>
+    <p id = "searchP"> Please type a course name that U want to search</p>
+    <form action = "search" method = "POST" class = "new-search-form">
+        <label>
+            Search name
+            <input type="number" name = "courseID" class="full-width-input"/>
+        </label>
+        <button type = "submit" class = "searchButton">Search</button>
+    </form>
+</div>
+<div>
+    <h1> Search by department</h1>
+    <p> Please choose a department that U want to search</p>
+    {{!-- <ul>
+        <li><a href = "">Computer Science</a></li>
+        <li><a href = "">Electrical Engineering</a></li>
+    </ul> --}}
+    <form action = "department" method = "POST">
+        <label for="department">Department</label>
+        <select value="{{department}}" name="department" id="department">
+          <option value="Computer Science">Computer Science</option>
+          <option value="Electrical Engineering">Electrical Engineering</option>
+        </select>
+        <button type = "submit" class = "searchButton">Search</button>
+    </form>
+</div>

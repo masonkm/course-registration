@@ -1,0 +1,21 @@
+<nav>
+        <ul>
+            <li><a href="/courses/registration/">Make another search</a></li>
+        </ul>
+</nav>
+<section>
+    <h2>Course Lists of {{department}}</h2>
+    {{#if boo}}
+    <ul>
+        {{#each courses}}
+        <article>
+        <li>
+            <a href = "/courses/registration/search/{{this._id}}">{{this.courseTitle}}  {{this.courseName}}</a>
+        </li>
+        </article>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p> We're sorry, but no course was found for the department {{department}}</p>
+    {{/if}}
+</section>

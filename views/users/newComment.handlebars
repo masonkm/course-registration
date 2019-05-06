@@ -1,0 +1,26 @@
+<div>
+    <h1> Comment and rate {{course.courseTitle}} {{course.courseName}} </h1>
+    <form action = "post" method = "POST" class = "new-search-form">
+        <label>
+            Make a comment
+            <input type="text" name = "content"/>
+        </label>
+        <label>
+            Rate a score(max is 5.0)
+            <input type = "number" name = "rating"/>
+        </label>
+        <label>
+            <input name = "posterID" value = {{student._id}}>
+        </label>
+        <label>
+            <input name = "posterName" value = {{student.userName}}>
+        </label>
+        <label>
+            <input name = "posterStudentID" value = {{student.profile.studentId}}>
+        </label>
+        <label>
+            <input name = "course_id" value = {{course._id}}>
+        </label>
+        <button type = "submit" class = "searchButton">Submit</button>
+    </form>
+</div>

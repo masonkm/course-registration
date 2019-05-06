@@ -1,0 +1,47 @@
+<nav>
+        <ul>
+            <li><a href="/courses/registration/">Make another search</a></li>
+        </ul>
+</nav>
+<section>
+    <h2>Target course</h2>
+    {{#if boo}}
+    <dl>
+        <dt>ID</dt>
+        <dd>{{course.courseID}}</dd>
+        <dt>Term</dt>
+        <dd>{{course.term}}</dd>
+        <dt>Title</dt>
+        <dd>{{course.courseTitle}}</dd>
+        <dt>Name</dt>
+        <dd>{{course.courseName}}</dd>
+        <dt>Credits</dt>
+        <dd>{{course.credits}}</dd>
+        <dt>Department</dt>
+        <dd>{{course.department}}</dd>
+        <dt>Seats</dt>
+        <dd>{{course.availableSeats}}</dd>
+        <dt>Time</dt>  
+        <dd>{{course.time}}</dd>
+        <dt>Location</dt>
+        <dd>{{course.location}}</dd>
+        <dt>Professor</dt>
+        <dd>{{course.professor}}</dd>
+        <dt>Prerequisite</dt>
+        <dd>{{course.prerequisite}}</dd>
+        <dt>Corequisite</dt>
+        <dd>{{course.corequisite}}</dd>
+        <dt>Description</dt>
+        <dd>{{course.description}}</dd>
+        <dt>Comments</dt>
+        <dd><a href = "/courses/registration/comment/{{course._id}}">comments</a></dd>
+        <dt>AvgRating</dt>
+        <dd>{{course.avgRating}}</dd>
+    </dl>
+    {{else}}
+    <p> We're sorry, but no course was found for courseID {{courseID}}</p>
+    {{/if}}
+</section>
+
+
+
