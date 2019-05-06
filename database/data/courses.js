@@ -13,7 +13,10 @@ const getAllCourses = async(id) => {
 const getCourseById = async(id)=> {
   const courseCollection = await courses();
   const course = await courseCollection.findOne({ _id: id });
-  if (!course) throw "course not found";
+  //console.log(course);
+  if (!course){
+    throw "course not found";
+  } 
   return course;
 };
 
@@ -155,6 +158,86 @@ const removeComment = async(id, newComments, avgRating) => {
   return await getCourseById(id);
 };
 
+//added by JG
+async function getCourseByCourseID(ID){
+  //console.log("enter function successfully");
+  //console.log("id is " + ID);
+  if(ID === undefined){
+    throw "Input is empty";
+  }
+  if(typeof(ID) !== "string" ) {
+    throw "Input is not a string";
+  }
+
+  for(let i = 0; i<ID.length; i++){
+      if(ID.charAt(i)!="0" &&
+      ID.charAt(i)!="1" &&
+      ID.charAt(i)!="2" &&
+      ID.charAt(i)!="3" &&
+      ID.charAt(i)!="4" &&
+      ID.charAt(i)!="5" &&
+      ID.charAt(i)!="6" &&
+      ID.charAt(i)!="7" &&
+      ID.charAt(i)!="8" &&
+      ID.charAt(i)!="9"){
+          throw "Input is illegal"
+      }
+  }
+
+  let ID_num = parseInt(ID);
+  let coursesData = await getAllCourses();
+
+  for (let i =0; i< coursesData.length; i++){
+    if(coursesData[i].courseID === ID_num){
+      return coursesData[i];
+    }
+  }
+  return null;
+};
+
+async function getCourseByDepartment(dep){
+  //console.log("enter GCBD successfully");
+  if(dep === undefined){
+    throw "Input is empty";
+  }
+  if(typeof(dep) !== "string" ) {
+    throw "Input is not a string";
+  }
+
+  let coursesData = await getAllCourses();
+
+  let courseList = [];
+
+  for (let i =0; i< coursesData.length; i++){
+    if(coursesData[i].department == dep){
+      courseList.push(coursesData[i]);
+    }
+  }
+  return courseList;
+};
+
+async function getCourseByCourseTitle(title){
+  if(title === undefined){
+    throw "Input is empty";
+  }
+  if(typeof(title) !== "string" ) {
+    throw "Input is not a string";
+  }
+  let coursesData = await getAllCourses();
+
+  for (let i =0; i< coursesData.length; i++){
+    if(coursesData[i].courseTitle == title){
+      return coursesData[i];
+    }
+  }
+  return null;
+
+};
+
+
+
+
+
 module.exports = {
   getAllCourses,
   getCourseById,
@@ -162,5 +245,8 @@ module.exports = {
   removeCourse,
   updateCourse,
   addComment,
-  removeComment
+  removeComment,
+  getCourseByCourseID,
+  getCourseByDepartment,
+  getCourseByCourseTitle
 };
