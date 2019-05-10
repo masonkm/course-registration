@@ -1,0 +1,13 @@
+<nav>
+        <ul>
+            <li><a href="/courses/registration/">Make another search</a></li>
+            <li><a href = "/mainPage">Go back to main page</a></li>
+        </ul>
+</nav>
+<section>
+    {{#if hasError}}
+    <p>Drop failed because {{error}}</p>
+    {{else}}
+    <p>Drop successfully</p>
+    {{/if}}
+</section>

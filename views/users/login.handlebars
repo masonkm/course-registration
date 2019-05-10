@@ -1,0 +1,32 @@
+<article>
+                
+                <h1>LOGIN PAGE</h1>
+                <div>
+                    <form class="Myform" id="login-form" method="POST" action="/login">
+                        <input class="form-control" name="username" id="username" type="text"
+                            placeholder="Username" aria-label="Search" required oninvalid="this.setCustomValidity('Username cannot be empty.')" 
+                            onchange="this.setCustomValidity('')">
+                        <br>
+
+                        <input class="form-control" name="password" id="password" type="password"
+                            placeholder="Password" aria-label="Search" required oninvalid="this.setCustomValidity('Password cannot be empty.')" 
+                            onchange="this.setCustomValidity('')">
+                        <br>
+                        <button class="cust-button" name="login" id="login"
+                            type="submit">Login</button>
+                        
+                    </form>
+                    
+                </div>
+
+                <br>
+                
+                <div>
+
+                {{#unless status}}
+                    <p class="msg">{{message}}</p>
+                {{/unless}}
+
+                </div>          
+                
+</article>

@@ -1,0 +1,27 @@
+<nav>
+        <ul>
+            <li><a href="/courses/rating/">Make comment for other course</a></li>
+            <li><a href = "/mainPage">Go back to main page</a></li>
+        </ul>
+</nav>
+<section>
+    <h1> Options </h1>
+    {{#if hasComment}}
+    <p>The previous comment made by you is:</p>
+    <dl>
+        <dt>Comment</dt>
+        <dd>{{comment.comment}}</dd>
+        <dt>Rate</dt>
+        <dd>{{comment.rate}}</dd>
+    </dl>
+    <ul>
+        <li><a href = "/courses/rating/changeComment/{{id}}">Change your comment</a></li>
+        <li><a href = "/courses/rating/deleteComment/{{id}}">Delete your comment</a></li>
+    </ul>
+    {{else}}
+    <p>No comment made by you for this course</p>
+    <ul>
+        <li><a href = "/courses/rating/newComment/{{id}}">Make a new comment</a></li>
+    </ul>
+    {{/if}}
+</section>

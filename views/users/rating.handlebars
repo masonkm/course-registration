@@ -1,0 +1,23 @@
+<nav>
+        <ul>
+            <li><a href = "/mainPage">Go back to main page</a></li>
+        </ul>
+</nav>
+<section>
+    <h1>Rating your courses</h1>
+    {{#if hasFinishedCourse}}
+    <p>Rating and commenting a following course</p>
+    <ul>
+        {{#each finishedCourses}}
+            <article>
+                <li>
+                    <a href = "/courses/rating/details/{{this._id}}">
+                    {{this.courseTitle}}  {{this.courseName}}</a>
+                </li>
+            </article>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>Sorry, but you don't have any finished course yet</p>
+    {{/if}}
+</section>

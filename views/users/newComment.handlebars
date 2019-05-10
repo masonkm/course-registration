@@ -1,0 +1,20 @@
+<nav>
+        <ul>
+            <li><a href="/courses/rating/">Make comment for other course</a></li>
+            <li><a href = "/mainPage">Go back to main page</a></li>
+        </ul>
+</nav>
+<div>
+    <h1> Comment and rate {{course.courseTitle}} {{course.courseName}} </h1>
+    <form action = "post" method = "POST" class = "new-search-form">
+        <label>
+            Make a comment
+            <input type="text" name = "comment"/>
+        </label>
+        <label>
+            Rate a score(max is 5.0)
+            <input type = "number" name = "rating"/>
+        </label>
+        <button type = "submit" class = "searchButton">Submit</button>
+    </form>
+</div>

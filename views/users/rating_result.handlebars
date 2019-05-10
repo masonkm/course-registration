@@ -1,0 +1,13 @@
+<nav>
+        <ul>
+            <li><a href="/courses/rating/">Make another rating</a></li>
+            <li><a href = "/mainPage">Go back to main page</a></li>
+        </ul>
+</nav>
+<section>
+    {{#if hasError}}
+    <p>Rating failed because {{error}}</p>
+    {{else}}
+    <p>{{operation}} Rating successfully</p>
+    {{/if}}
+</section>

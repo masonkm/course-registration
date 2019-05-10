@@ -1,0 +1,110 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%; 
+    background: #E6E6FA;
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+}
+
+h1 {
+    margin: 35px 70px 50px 90px;
+    text-align: center;
+    color: red;
+}
+
+li {
+    border: 2px solid blue;
+    padding: 10px;
+    display: list-item;
+}
+
+.log-out {
+    text-align: center;
+    font-weight: bold;
+}
+
+.logout-btn {
+    text-align: center;
+}
+
+.user-info {
+    font-weight: bolder;
+    margin: 35px 70px 50px 90px;
+    list-style: square inside;
+}
+
+.msg {
+    text-align: center;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 150%;
+    color: red;
+}
+
+/*form styles*/
+.Myform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+
+.Myform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+}
+
+/*inputs*/
+.Myform input, .Myform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+.Myform input:focus, .Myform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ee0979;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+.cust-button {
+  background-color: rgb(39, 115, 42);
+  border-radius: 12px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
